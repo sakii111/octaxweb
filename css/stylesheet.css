@@ -1,0 +1,1482 @@
+body {
+    margin: 0px;
+    color: #0f0f10 !important;
+    background-color: #eeeef1 !important;
+    padding: 0px;
+    /* font-family: "Montserrat", sans-serif !important; */
+    font-family: "Roboto Flex", sans-serif !important;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.list-inline-item:not(:last-child) {
+    margin-right: 0px;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+p {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-bottom: 0rem !important;
+}
+
+.list-group-item {
+    position: relative !important;
+    padding: 0px !important;
+    text-decoration: none !important;
+    background-color: transparent !important;
+    border: none !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 0px;
+}
+
+ul {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    padding-inline-start: 0px;
+}
+
+dl,
+ol,
+ul {
+    margin-top: 0;
+    margin-bottom: 0px !important;
+}
+
+/*  */
+
+.mainbody {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.innerBody {
+    position: relative;
+    width: 320px;
+    height: 100%;
+    background-color: #fff;
+}
+
+.mainContentLogin {
+    padding: 20px;
+    text-align: center;
+}
+
+.mainContentLogin img {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.mainContentLogin h2 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.messagelogin {
+    font-size: 10px;
+    font-weight: 500;
+    color: red;
+}
+
+.mainContentLogin button,
+.loginEmail button,
+.ifnotLoginShow button,
+.comitbutton {
+    background-color: #12BF54;
+    color: #fff;
+    width: 200px;
+    border: 0px;
+    margin: 20px 0px 8px !important;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 50px;
+    padding: 9px 10px;
+}
+
+.loginMsgpay {
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.footerFix {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    z-index: 99999999;
+    background: #fafafa;
+    border-top: 2px solid #dddddd4d;
+    width: 320px;
+    padding: 10px 30px;
+}
+
+.footerFix ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footerFix ul li a {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.footerFix li img {
+    width: 20px;
+}
+
+.footerFix li a {
+    font-size: 9px;
+    font-weight: 500;
+    color: #a5a9ae;
+}
+
+.activelink {
+    color: #12BF54 !important;
+}
+
+.loginEmail h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px !important;
+}
+
+.loginEmail p {
+    font-size: 12px;
+    font-weight: 400;
+    color: #a5a9ae;
+}
+
+.loginEmail {
+    padding: 20px;
+}
+
+.loginEmail button {
+    width: 100%;
+}
+
+.loginEmail input {
+    width: 100%;
+    border: 1px solid #dcdcdc;
+    margin-top: 25px;
+    padding: 7px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    background-color: #f8f9fc;
+}
+
+.backimg {
+    width: 20px;
+    margin-bottom: 40px;
+}
+
+.mainTextBody {
+    background-color: #f8f9fc;
+    padding: 10px;
+    padding-top: 70px;
+}
+
+.otherExchangeDiv {
+    display: flex;
+    justify-content: space-between;
+}
+
+.otherExchangeDiv img {
+    width: 100px;
+}
+
+.exchangeSection {
+    width: 48%;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.minmaxnum {
+    font-size: 11px;
+    font-weight: 500;
+    color: #363535;
+}
+
+.minmaxnum span {
+    color: #000;
+}
+
+.oneusdtprice {
+    font-size: 8px;
+    font-weight: 500;
+    color: #a5a9ae;
+    margin-bottom: 7px !important;
+}
+
+.avragepricediv {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.avragepricediv span {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.mainTextBody h3 {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.basednumber {
+    font-size: 9px;
+    color: #4b4848;
+    font-weight: 500;
+    text-align: center;
+    margin: 10px 0px 15px !important;
+}
+
+.platAdvan {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.platAdvan h2 {
+    font-size: 12px;
+    font-weight: 600;
+    color: #000;
+}
+
+.platAdvan img {
+    width: 20px;
+    margin-right: 5px;
+}
+
+.platAdvan p {
+    font-size: 12px;
+    color: #4e4e4e;
+    font-weight: 500;
+}
+
+.lastadvan {
+    margin-bottom: 70px !important;
+}
+
+.ifnotLoginShow {
+    text-align: center;
+}
+
+.ifnotLoginShow button {
+    width: 240px;
+}
+
+.yellowSection {
+    background-color: #fff;
+    background-image: url('../images/yellow.png');
+    background-position: top;
+    background-size: cover;
+    padding: 20px 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.refressTime {
+    font-size: 9px;
+    font-weight: 500;
+    color: #777;
+}
+
+.refressTime span {
+    color: #e8a20ce6;
+}
+
+.onepriceex {
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainPriceshow h4 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.mainPriceshow h4 span {
+    font-size: 9px;
+    background-color: #fe5e22;
+    border: 1px solid #ddd;
+    padding: 2px 5px;
+    color: #fff;
+    font-weight: 400;
+}
+
+.darkYelloSec {
+    border-radius: 8px;
+    background-color: #feeea8;
+    padding: 10px;
+    margin-top: 15px;
+}
+
+.yellowSection tbody {
+    border-radius: 4px !important;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.yellowSection table {
+    font-size: 10px;
+    font-weight: 500;
+    width: 100%;
+}
+
+.yellowSection thead tr th {
+    padding-bottom: 10px !important;
+}
+
+.yellowSection thead {
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.yellowSection tbody tr {
+    border-bottom: 2px solid #fafafa;
+}
+
+.yellowSection tbody tr td {
+    padding: 5px;
+}
+
+.yellowSection a {
+    color: rgb(1, 44, 42);
+    font-size: 10px;
+    font-weight: 500;
+    text-decoration: underline !important;
+}
+
+.mainlinkqro {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-around;
+}
+
+.mainlinkqro img {
+    width: 30px;
+}
+
+.mainlinkqro a {
+    text-decoration: none !important;
+    color: #000;
+}
+
+.mainlinkqro a:hover {
+    color: #000;
+}
+
+.headersection {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    left: inherit;
+    width: 320px;
+    background: #3af481;
+    z-index: 99999999;
+}
+
+.conthead {
+    height: 20px;
+    width: 20px;
+}
+
+.logoimg {
+    width: 100px;
+}
+
+.bannerimage {
+    margin-bottom: 10px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.mainTextBodyHome {
+    background-color: #fff;
+    padding: 60px 10px 80px;
+}
+
+.sectionThreein {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #d3d0d0;
+}
+
+.sectionThreein img {
+    width: 65px;
+    margin-right: 10px;
+}
+
+.sectionThreein h2 {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.sectionThreein p {
+    font-size: 10px;
+    font-weight: 500;
+    color: #666;
+}
+
+.officalimage {
+    margin-left: 15%;
+    width: 70%;
+}
+
+.officalss {
+    font-size: 12px;
+    font-weight: 600;
+    margin: 20px 0px !important;
+    text-align: center;
+}
+
+.mainTextBodyHome h3 {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.mainTextBodyHome table {
+    text-align: center;
+    width: 100%;
+}
+
+.mainTextBodyHome thead td {
+    font-size: 9px;
+    font-weight: 500;
+    padding-bottom: 20px;
+}
+
+.mainTextBodyHome tbody td {
+    font-size: 9px;
+    font-weight: 600;
+}
+
+.plusvalue {
+    color: green;
+}
+
+.mainTextBodyHome tbody td h6 {
+    font-size: 9px;
+    margin-bottom: 0px;
+}
+
+.logonamecoin {
+    display: flex;
+}
+
+.logonamecoin img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.mainTextBodyHome tbody tr td {
+    margin-bottom: 15px !important;
+}
+
+.minusvalue {
+    color: red;
+}
+
+#nextButton:disabled {
+    background-color: #CCCCCC;
+    color: #666666;
+    cursor: not-allowed;
+}
+
+#warningmsg {
+    color: red;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/*.inputSection{*/
+
+/*    display: flex;*/
+
+/*    justify-content: space-between;*/
+
+/*}*/
+
+.inputSection input {
+    width: 100%;
+}
+
+.mainLoginShowSec {
+    background-color: #fafafa;
+    background-image: url('../images/yellow.png');
+    background-size: cover;
+    background-position: top;
+    padding: 35px 20px 80px;
+    height: 100%;
+    overflow: scroll;
+}
+
+.userimgname {
+    text-align: center;
+}
+
+.userimgname img {
+    width: 80px;
+    height: 80px;
+}
+
+.userimgname h3 {
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.amountSection {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    margin: 20px 0px;
+}
+
+.amountSection h5 {
+    font-size: 10px;
+    font-weight: 500;
+    color: #666666;
+    margin-bottom: 0px !important;
+}
+
+.amountSection p {
+    font-size: 14px;
+    font-weight: 700;
+    color: #000;
+}
+
+.linklist li {
+    margin-bottom: 15px;
+}
+
+.linklist li:hover {
+    cursor: pointer;
+}
+
+.linklist li a {
+    color: #111;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.linklist li span p {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.linklist li span img {
+    width: 18px;
+    margin-right: 5px;
+    height: 18px;
+}
+
+.linklist li span {
+    display: flex;
+    align-items: center;
+}
+
+.payRewardSec {
+    background-image: url('../images/reimg.png');
+    background-size: cover;
+    background-position: center;
+    padding: 25px 10px 16px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.payRewardSec h5 {
+    color: #000;
+}
+
+.payRewardSec button {
+    background-color: #12BF54;
+    color: #fff;
+    border: 0px;
+    font-size: 10px;
+    font-weight: 600;
+    border-radius: 50px;
+    padding: 3px 20px;
+}
+
+.payRewardSec ul {
+    margin-top: 0px !important;
+}
+
+.payxsection {
+    background-image: url('../images/dark.png');
+    background-size: cover;
+    background-position: center;
+    padding: 20px 10px;
+    display: flex;
+    margin: 20px 0px !important;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.insecpay {
+    display: flex;
+    align-items: center;
+}
+
+.insecpay img {
+    width: 30px;
+    margin-right: 5px;
+    height: 30px;
+}
+
+.insecpay h4 {
+    font-size: 10px;
+    margin-bottom: 0px;
+    font-weight: 600;
+    color: wheat;
+}
+
+.insecpay p {
+    font-size: 8px;
+    font-weight: 500;
+    color: #a5a9ae;
+}
+
+.payxsection button {
+    background-color: wheat;
+    color: rgb(41, 4, 4);
+    font-size: 9px;
+    font-weight: 500;
+    border: 0px;
+    border-radius: 50px;
+    padding: 4px 20px;
+}
+
+.otherhead {
+    display: flex;
+    align-items: center;
+    padding: 10px 0px;
+    justify-content: space-around;
+    /* position: fixed; */
+    width: 320px;
+    background: #12BF54;
+    z-index: 999999999;
+}
+
+.otherhead h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+
+.clockimg {
+    width: 25px;
+    height: 22px;
+}
+
+.otherhead a img {
+    margin-bottom: 0px !important;
+    display: flex;
+    width: 15px !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.backimgup {
+    width: 100%;
+}
+
+.rechargebody {
+    background-color: #f2f3f5;
+    height: 100%;
+}
+
+.innerBodyRecharge {
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 4px;
+}
+
+.infosec i {
+    color: rgb(139, 139, 4);
+}
+
+.infosec {
+    background-color: #fffef0;
+    padding: 5px;
+    font-size: 9px;
+    font-weight: 600;
+}
+
+.innerBodyRecharge h4 {
+    font-size: 10px;
+    font-weight: 600;
+    color: #666666;
+}
+
+.networksection button img {
+    width: 25px;
+    margin-right: 10px;
+}
+
+.networksection button {
+    width: 49%;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px;
+    background-color: #f4f3f3;
+    border: 0px;
+}
+
+.avamount {
+    font-size: 10px;
+    color: rgb(65, 65, 81);
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+#depositbutton {
+    border: 0px;
+    color: #fff;
+    width: 100%;
+    border-radius: 50px;
+    margin: 20px 0px;
+    background-color: #12BF54;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 8px 20px;
+}
+
+.amountent {
+    font-size: 12px;
+    font-weight: 500;
+    margin: 10px 0px !important;
+}
+
+.inputsectionnet {
+    display: flex;
+    background-color: #fafafa;
+    align-items: center;
+    position: relative;
+}
+
+.inputsectionnet input {
+    width: 100%;
+    font-size: 12px;
+    font-weight: 500;
+    height: 47px;
+    padding: 5px 80px 5px 10px;
+}
+
+.inputsectionnet span {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.inputsectionnet span img {
+    width: 20px;
+}
+
+.infousdtd {
+    text-align: center;
+    font-size: 12px;
+    color: #4b4848;
+    font-weight: 600;
+}
+
+.innsecbody {
+    padding: 50px 10px 30px;
+}
+
+.innsecbody h6 {
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.ifhavetra {
+    font-size: 11px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.listsection {
+    padding: 10px 0px;
+    border-bottom: 1px solid #e1dddd;
+}
+
+.listsection p {
+    font-size: 10px;
+    font-weight: 500;
+    color: #666;
+}
+
+.listsection h4 {
+    margin-top: 5px;
+    color: #222;
+}
+
+.listsection img {
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+}
+
+.usdttype {
+    color: red;
+    font-size: 9px;
+    font-weight: 600;
+    padding: 10px 10px 50px;
+}
+
+.qrcodeimage {
+    width: 70%;
+    margin-left: 15%;
+    margin-bottom: 15px;
+}
+
+.txidsection {
+    margin: 10px 0px;
+}
+
+.txidsection button {
+    background-color: #000;
+    padding: 6px 25px;
+    font-size: 9px;
+    font-weight: 600;
+    color: #fff;
+    border: 0px;
+    border-radius: 50px;
+}
+
+.txidsection span {
+    top: 11px
+}
+
+.networksection {
+    display: flex;
+    justify-content: space-around;
+}
+
+.networksection label {
+    position: relative;
+    width: 40%;
+}
+
+.networksection label img {
+    width: 20px;
+}
+
+.networksection input {
+    position: absolute;
+    background-color: transparent;
+    width: 175%;
+    height: 25px;
+}
+
+.logoutbtn {
+    background-color: #12BF54;
+    color: #fff;
+    padding: 8px 20px;
+    width: 100%;
+    border: 0px;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 50px;
+}
+
+.referimg {
+    width: 100%;
+}
+
+.emImgSec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    flex-direction: column;
+}
+
+.emImgSec img {
+    width: 120px;
+}
+
+.backOptionRefer {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+.backOptionRefer a img {
+    margin-bottom: 0px !important;
+}
+
+.referback a img {
+    width: 16px !important;
+}
+
+.upTextInv {
+    background-image: url('../images/inBack.jpeg');
+    background-size: cover;
+    background-position: top;
+    padding: 10px 20px 200px;
+    text-align: center;
+}
+
+.upTextInv h2 {
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 3px !important;
+    margin-top: 20px;
+}
+
+.upTextInv p {
+    font-size: 12px;
+}
+
+.otherTextReferal {
+    padding: 0px 20px 0px;
+}
+
+.otherTextReferal button,
+.submitSection button {
+    width: 100%;
+    border: 0px;
+    background-color: #12BF54;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 30px;
+}
+
+.percentageSection {
+    background-color: #000;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.percentageSection h5 {
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    color: #ffd016;
+}
+
+.headsecrate {
+    font-weight: 600 !important;
+    background-color: #ffd016;
+}
+
+.ordinate {
+    padding: 0px 0px 4px;
+    background-color: #fff;
+    display: flex;
+    border-radius: 4px;
+    overflow: hidden;
+    justify-content: space-between;
+}
+
+.ordinate span {
+    display: block;
+    text-align: center;
+    font-size: 8px;
+    font-weight: 500;
+    padding: 5px;
+}
+
+.headSecordileft,
+.rateSectionright {
+    width: 50%;
+}
+
+.otherheadSection {
+    display: flex;
+    padding: 10px;
+    justify-content: start;
+}
+
+.otherheadSection h4 {
+    margin: auto;
+}
+
+.emImgSec p {
+    font-size: 10px;
+    font-weight: 600;
+    color: #ccc;
+    margin-top: 5px;
+}
+
+.sellOption {
+    padding: 15px;
+    background-color: #fff;
+    margin: 10px 0px;
+}
+
+.sellOption label {
+    font-size: 12px;
+    font-weight: 400;
+    color: #5b5b5b;
+    margin-bottom: 5px;
+}
+
+.mainSellBody {
+    background-color: #fafafa;
+}
+
+.avalus {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.avalus img {
+    width: 12px;
+}
+
+.avalus i {
+    font-size: 9px;
+    margin-left: 2px;
+}
+
+.Available {
+    color: blue;
+}
+
+.submitSection {
+    margin: 10px;
+}
+
+.submitSection p {
+    color: #a5a9ae;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.submitSection button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.backSecRate {
+    background-color: #f4f4f4;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.backSecRate td span {
+    color: red;
+}
+
+.backSecRate td {
+    background-color: #fff !important;
+    font-size: 10px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.backSecRate table {
+    margin-bottom: 0px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.backSecRate tr td:first-child {
+    border-right: 1px solid #ddd !important;
+}
+
+#amountText {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.backSecRate {
+    margin-top: 20px;
+}
+
+.accountOption {
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px 0px;
+}
+
+.accountOption ul {
+    border-radius: 0px;
+}
+
+.accountOption li span:last-child {
+    color: #000;
+}
+
+.accountOption li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #a5a9ae !important;
+    font-size: 12px;
+    color: #5b5b5b;
+    padding: 10px 0px !important;
+}
+
+.accountOption img {
+    width: 15px;
+}
+
+.accountOption span h6 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 0px !important;
+}
+
+.sellupbaner {
+    width: 100%;
+}
+
+.addbankaccountname {
+    border: 2px dashed #2cdb8d;
+    margin-top: 15px;
+    padding: 15px;
+    text-align: center;
+    border-radius: 2px;
+    font-size: 12px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.addbankaccountname i {
+    margin-right: 5px;
+    color: #2cdb8d;
+}
+
+.account_addsection {
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px 0px;
+}
+
+.account_addsection div {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0px;
+    border-bottom: 1px solid #d6d6d6;
+}
+
+.account_addsection div:last-child {
+    border-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.account_addsection div label {
+    color: #333;
+    font-size: 12px;
+}
+
+.account_addsection div input {
+    border: 0px;
+    font-size: 10px;
+    width: 70%;
+}
+
+.comitbutton {
+    width: 100%;
+}
+
+.butonscomit {
+    padding: 10px 10px 0px;
+}
+
+.comitp {
+    font-size: 10px;
+    font-weight: 500;
+    color: #5b5b5b;
+    padding: 10px;
+}
+
+:focus-visible {
+    outline: 0px;
+}
+
+.infsiantba {
+    position: relative;
+}
+
+.innerbal {
+    font-size: 12px;
+    padding: 15px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    background: #fff;
+    font-weight: 500;
+    color: red;
+}
+
+#infoSecbal {
+    display: none;
+}
+
+.infsiantba button {
+    color: red;
+    border: 1px solid red;
+    background-color: transparent;
+    margin-bottom: 25px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logoimg {
+    width: 22px;
+}
+
+.logo p {
+    font-size: 13px;
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+.backlinkin {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    text-align: left;
+}
+
+.mainTextReward {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    padding: 10px;
+    background-color: #fff;
+    font-weight: 600;
+}
+
+.mainContentreward {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.mainTextReward img {
+    width: 15px;
+}
+
+.tablehead {
+    background-color: #333;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 600;
+}
+
+.tableDataSection {
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.depositQuery {
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.processSection {
+    background-color: #a8f9d4;
+    color: #2cdb8d;
+    padding: 2px;
+    font-size: 8px;
+    font-weight: 500;
+    border-radius: 4px;
+}
+
+.accountSectionAll {
+    position: relative;
+}
+
+.addButtonSection {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding: 10px;
+    width: 100%;
+}
+
+.addButtonSection button {
+    background-color: #000;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 8px 10px;
+    text-align: center;
+    border: 0px;
+    color: #fff;
+    border-radius: 50px;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.submitvalueSection {
+    background-color: #000 !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    padding: 8px 10px;
+    text-align: center;
+    border: 0px !important;
+    color: #fff !important;
+    border-radius: 50px !important;
+}
+
+.accountSectionAll {
+    padding: 10px;
+}
+
+.buttonSecacc {
+    align-items: center;
+    display: flex;
+    border-top: 1px solid #b4b4b4;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.buttonSecacc p {
+    font-size: 8px;
+    font-weight: 500;
+    color: #b4b4b4;
+}
+
+.buttonSecacc button {
+    background-color: transparent;
+    color: #b4b4b4;
+    border: 0px;
+    padding: 0px;
+    font-size: 10px;
+}
+
+.mainAccountSec {
+    background: #fff;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.mainAccountSec li {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+#accountWarning,
+#usdtWarining,
+#amountWarning {
+    display: none;
+}
+
+.mainContainerLogin {
+    background-color: #000;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Nunito Sans", sans-serif !important;
+}
+
+.mainContainerLogin h2 {
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 0px !important;
+}
+
+.mainContainerLogin p {
+    font-size: 14px;
+    margin-bottom: 25px !important;
+    font-weight: 500;
+    color: #333;
+}
+
+.mainContainerLogin .innerLoginSec {
+    background: #fff;
+    padding: 40px 20px;
+    height: 100%;
+    width: 380px;
+    border-top: 5px solid #ef0606;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.inputSearchSection {
+    position: relative;
+}
+
+.mainContainerLogin label {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.inputSearchSection i {
+    position: absolute;
+    top: 16px;
+    left: 13px;
+    color: #666;
+}
+
+.inputSearchSection input {
+    padding: 10px 10px 10px 50px;
+    font-size: 14px;
+    height: 52px;
+    font-weight: 600;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.mainContainerLogin button {
+    text-align: center !important;
+    color: #fff !important;
+    border: 0px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    padding: 12px 24px !important;
+    border-radius: 4px !important;
+    margin-top: 15px !important;
+    background: #ef0606 !important;
+    /* width: fit-content; */
+}

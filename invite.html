@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Invite Friends</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Firebase App (the core Firebase SDK) -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #1a202c;
+    }
+    .bg-custom-dark { background-color: #ffffff; }
+    .bg-custom-blue { background-color: #2e457f; }
+    .bg-custom-green { background-color: #22c55e; }
+    .bg-custom-light-blue { background-color: #f6f6f6; }
+    .text-custom-yellow { color: #f59e0b; }
+    .text-custom-white { color: #e5e7eb; }
+
+    .table-container::-webkit-scrollbar {
+      height: 4px;
+    }
+    .table-container::-webkit-scrollbar-track {
+      background: #4a5568;
+      border-radius: 2px;
+    }
+    .table-container::-webkit-scrollbar-thumb {
+      background: #9ca3af;
+      border-radius: 2px;
+    }
+    .table-container::-webkit-scrollbar-thumb:hover {
+      background: #e5e7eb;
+    }
+
+    @media (max-width: 640px) {
+      .table-responsive th,
+      .table-responsive td {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body class="bg-custom-dark text-white min-h-screen flex flex-col items-center p-4">
+
+  <!-- Top Navigation Bar -->
+  <header class="w-full max-w-md flex justify-between items-center text-lg mb-4 bg-[#12BF54] rounded-xl py-2 px-3">
+    <!-- Back Arrow -->
+    <a href="/mine.html" class="p-2">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="black" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+      </svg>
+    </a>
+    <h1 class="flex-grow text-center font-semibold text-black">Invite Friends</h1>
+    <div class="w-6 h-6 p-2"></div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="w-full max-w-md space-y-4">
+
+    <div class="p-2 text-center text-sm font-bold text-gray-400">
+      <img src="/images/invitevid.gif" alt="Get More Reward" class="w-full h-auto rounded-lg">
+    </div>
+
+    <!-- Invitation Link -->
+    <div class="bg-custom-blue p-3 rounded-2xl flex items-center justify-between shadow-lg">
+      <span id="inviteLink" class="truncate text-white text-sm font-medium pr-2">https://OCTA Xspeedo.com/#/invite/s...</span>
+      <button onclick="copyToClipboard('inviteLink')" class="bg-transparent text-white p-2 ml-2 rounded-lg hover:bg-white hover:bg-opacity-20">
+        📋
+      </button>
+    </div>
+
+    <!-- Invite Code -->
+    <div class="bg-custom-green p-3 rounded-2xl flex items-center justify-between shadow-lg">
+      <span id="inviteCode" class="font-bold text-white text-lg">DQM5RN</span>
+      <button onclick="copyToClipboard('inviteCode')" class="bg-transparent text-white p-2 ml-2 rounded-lg hover:bg-white hover:bg-opacity-20">
+        📋
+      </button>
+    </div>
+
+    <!-- Recommended Table -->
+    <div class="bg-gray-800 p-4 rounded-2xl shadow-lg">
+      <div class="flex justify-center items-center space-x-2 mb-4">
+        <div class="h-1 w-1 bg-white rounded-full opacity-50"></div>
+        <h3 class="text-white font-semibold">Recommended</h3>
+        <div class="h-1 w-1 bg-white rounded-full opacity-50"></div>
+      </div>
+
+      <div class="overflow-x-auto rounded-xl table-container">
+        <table class="w-full text-left table-auto table-responsive">
+          <thead class="bg-custom-blue">
+            <tr>
+              <th class="p-3 text-white font-medium">Channel</th>
+              <th class="p-3 text-white font-medium">My rate</th>
+              <th class="p-3 text-white font-medium">Referred rate</th>
+            </tr>
+          </thead>
+          <tbody class="bg-gray-900 divide-y divide-gray-700">
+            <tr>
+              <td class="p-3 text-white">UPI</td>
+              <td class="p-3 text-white">1.8%</td>
+              <td class="p-3 text-white">
+                1 level - 0.3%<br>
+                2 level - 0.2%<br>
+                3 level - 0.1%<br>
+                4 level - 0.05%<br>
+                5 level - 0.05%
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-xs text-gray-400 mt-4 leading-relaxed">
+        For each transaction made by your referred users, you will receive a sales commission.
+      </p>
+    </div>
+
+    <!-- Go to Mine Page Button 
+    <div class="w-full text-center py-4">
+      <a href="mine.html" class="bg-custom-green text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-green-600 transition-colors duration-300">
+        Go to Mine Page
+      </a>
+    </div>
+  </main>
+     -->
+  <!-- Copy Script -->
+  <script>
+    function copyToClipboard(elementId) {
+      const element = document.getElementById(elementId);
+      const textToCopy = element.textContent || element.innerText;
+
+      const tempInput = document.createElement("textarea");
+      tempInput.value = textToCopy;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
+      alert("Copied to clipboard!");
+    }
+  </script>
+
+  <!-- Firebase Init -->
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBplXdPF8ogTbsFOiNDPhBZIAUMPVJqDjc",
+      authDomain: "first-47e77.firebaseapp.com",
+      projectId: "first-47e77",
+      storageBucket: "first-47e77.appspot.com",
+      messagingSenderId: "326623691876",
+      appId: "1:326623691876:web:ded81074a6f236ac3f0b71"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+</body>
+</html>

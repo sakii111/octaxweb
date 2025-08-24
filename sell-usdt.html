@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>OCTA X</title>
+
+  <link rel="stylesheet" href="/css/stylesheet.css">
+  <link rel="stylesheet" href="/css/responsivestyle.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="./images/favicon.png">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <script src="https://kit.fontawesome.com/3defd9afa9.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/a8f8257674.js" crossorigin="anonymous"></script>
+
+  <link rel="icon" type="image/x-icon" href="/images/octalogo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+Devanagari:wght@100..900&family=Noto+Serif+Devanagari:wght@100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+    rel="stylesheet">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E4Q0VWHY3J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-E4Q0VWHY3J');
+  </script>
+
+  <style>
+    /* General Styles */
+    .payee-details {
+      padding: 10px 15px;
+      border-radius: 8px;
+      background-color: #f8f9fa;
+      border: 1px solid #dee2e6;
+      margin-top: 10px;
+    }
+
+    .payee-details h6 {
+      font-size: 14px;
+      color: #6c757d;
+    }
+
+    .payee-details p {
+      margin-bottom: 5px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .payee-details p span {
+      font-weight: 600;
+    }
+
+    .accountOption {
+      margin-top: 10px;
+    }
+
+    /* Withdrawal Options */
+    .withdrawal-options {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+
+    .withdrawal-option {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+      border: 2px solid #ddd;
+      border-radius: 12px;
+      cursor: pointer;
+      width: 45%;
+      transition: all 0.3s ease;
+    }
+
+    .withdrawal-option.selected {
+      border-color: #12BF54;
+      background-color: #e6f7ed;
+      box-shadow: 0 0 8px rgba(18, 191, 84, 0.2);
+    }
+
+    .withdrawal-option input[type="radio"] {
+      display: none;
+    }
+
+    .withdrawal-option label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .withdrawal-option img {
+      width: 35px;
+      height: 35px;
+      margin-bottom: 5px;
+    }
+
+    .withdrawal-option span {
+      font-size: 14px;
+    }
+
+    .rate-info {
+      display: block;
+      margin-top: 5px;
+      font-size: 12px;
+      color: #6c757d;
+      text-align: center;
+    }
+
+    /* Sell Section */
+    .sellOption {
+      margin-top: 20px;
+    }
+
+    .sellOption .inputsectionnet {
+      position: relative;
+    }
+
+    .sellOption .inputsectionnet input {
+      padding-right: 70px;
+    }
+
+    .sellOption .inputsectionnet span {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-weight: 600;
+      color: #6c757d;
+    }
+
+    .sellOption .avalus {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      color: #888;
+      margin-top: 10px;
+    }
+
+    /* Updated Rate Display */
+    .sellOption .avalus #currentRate {
+      font-weight: bold;
+      color: #12BF54;
+    }
+
+    .rate-details {
+      display: block;
+      margin-top: 10px;
+      font-weight: 600;
+      color: #007bff;
+    }
+    
+    /* New Styles for Realistic Warnings */
+    .shake {
+      animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      perspective: 1000px;
+      border-color: #dc3545 !important;
+    }
+
+    @keyframes shake {
+      10%, 90% { transform: translate3d(-1px, 0, 0); }
+      20%, 80% { transform: translate3d(2px, 0, 0); }
+      30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+      40%, 60% { transform: translate3d(4px, 0, 0); }
+    }
+
+    .warning-text {
+      font-size: 12px;
+      font-weight: 600;
+      color: #dc3545;
+      display: none;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.02); opacity: 0.8; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="mainbody">
+    <div class="innerBody mainSellBody">
+      <div class="otherhead">
+        <a href="/exchange.html">
+          <img src="/images/back.png" class="backimg">
+        </a>
+        <h4>Exchange</h4>
+        <img src="/images/clock.png" class="clockimg" alt="">
+      </div>
+
+      <img src="/images/sellupbaner.jpeg" class="sellupbaner" alt="">
+
+      <div class="accountOption">
+        <div class="list-group-item">
+          <span>
+            <h6>Select Payee</h6>
+          </span>
+          <span>
+            <a href="/bank.html"><img src="/images/addpay.png" alt=""></a>
+          </span>
+        </div>
+        <div id="payeeDetailsContainer">
+        </div>
+        <div id="addPayeePrompt" style="display: none;">
+          <p id="accountWarning" class="warning-text">Please add your account first.</p>
+          <ul class="list-group">
+            <p class="addbankaccountname" onclick="window.location.href='/usdt.html'"><i
+                class="fa fa-plus-circle" aria-hidden="true"></i> Add Bank Account</p>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sellOption">
+        <label for="">Select Withdrawal Method</label>
+        <div class="withdrawal-options">
+          <div class="withdrawal-option" id="cdmOption">
+            <label for="cdm-withdraw">
+              <input type="radio" id="cdm-withdraw" name="withdraw-method" value="cdm" checked>
+              <img src="/images/money.png" alt="CDM Withdraw">
+              <span>CDM Withdraw</span>
+              <span class="rate-info">1 USDT = 101 INR</span>
+            </label>
+          </div>
+          <div class="withdrawal-option" id="upiOption">
+            <label for="upi-withdraw">
+              <input type="radio" id="upi-withdraw" name="withdraw-method" value="upi">
+              <img src="/images/UPI-Color.png" alt="UPI Withdraw">
+              <span>UPI Withdraw</span>
+              <span class="rate-info">1 USDT = 104 INR</span>
+            </label>
+          </div>
+        </div>
+
+        <label for="amountEnter">Sell amount</label>
+        <div class="inputsectionnet">
+          <input type="text" id="amountEnter" placeholder="Please enter the amount">
+          <span><img src="/images/us.png" alt=""> USDT</span>
+        </div>
+        <p id="usdtWarning" class="warning-text">You need to sell a minimum of 100 USDT.</p>
+        <p id="amountWarning" class="warning-text">Insufficient USDT balance, please add funds to complete the transaction.</p>
+
+        <p class="avalus">
+          <span class="Available">Available : 0 <img src="/images/us.png" alt=""></span>
+          <span id="currentRate">1 USDT = <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+              fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
+              <path
+                d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z" />
+            </svg> 101</span>
+        </p>
+        <p id="amountText" class="rate-details"></p>
+        <div class="backSecRate" style="display:none;">
+          <table class="table">
+            <tr>
+              <td>>=$500 and <$1000</td>
+              <td>99+<span>0.50</span></td>
+            </tr>
+            <tr>
+              <td>>=$1000 and <$2000</td>
+              <td>99+<span>1</span></td>
+            </tr>
+            <tr>
+              <td>>=$2000</td>
+              <td>99+<span>2</span></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="submitSection">
+        <button id="confim">Confirm</button>
+        <p>In order to get your funds back better, faster and more conveniently, your exchange order may be splitted into multiple parts.</p>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js";
+    import { getFirestore, collection, query, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-firestore.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-auth.js"; // NEW IMPORT
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBplXdPF8ogTbsFOiNDPhBZIAUMPVJqDjc",
+      authDomain: "first-47e77.firebaseapp.com",
+      projectId: "first-47e77",
+      storageBucket: "first-47e77.appspot.com",
+      messagingSenderId: "326623691876",
+      appId: "1:326623691876:web:ded81074a6f236ac3f0b71"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const auth = getAuth(app); // NEW: Initialize auth
+
+    let selectedAccountId = null;
+    let selectedRate = 101;
+    const minAmount = 100;
+    const totalAmount = 0;
+
+    function renderPayeeDetails(data) {
+      return `
+        <div class="payee-details">
+          <p>Account No.<span>${data.account}</span></p>
+          <p>IFSC<span>${data.ifsc}</span></p>
+          <p>Payee Name<span>${data.name}</span></p>
+        </div>`;
+    }
+
+    function loadPayeeDetails(userId) { // MODIFIED: Pass userId
+      const userBankAccountsRef = collection(db, "users", userId, "bankAccounts"); // NEW: Use user-specific path
+      const q = query(userBankAccountsRef, orderBy("timestamp", "desc"));
+      const payeeContainer = document.getElementById('payeeDetailsContainer');
+      const addPayeePrompt = document.getElementById('addPayeePrompt');
+
+      onSnapshot(q, (snapshot) => {
+        if (snapshot.empty) {
+          payeeContainer.style.display = 'none';
+          addPayeePrompt.style.display = 'block';
+          selectedAccountId = null;
+        } else {
+          addPayeePrompt.style.display = 'none';
+          payeeContainer.style.display = 'block';
+          payeeContainer.innerHTML = "";
+          const firstDoc = snapshot.docs[0];
+          payeeContainer.innerHTML = renderPayeeDetails(firstDoc.data());
+          selectedAccountId = firstDoc.id;
+        }
+      });
+    }
+
+    function updateCalculations() {
+      const input = document.getElementById('amountEnter');
+      const value = parseFloat(input.value);
+
+      if (input.value.trim() === "" || isNaN(value)) {
+        $('#amountText').html("");
+        return;
+      }
+
+      const amount = value * selectedRate;
+      $('#amountText').html(`You will receive Rs. ${amount.toFixed(2)}`);
+    }
+
+    document.getElementById('cdmOption').addEventListener('click', () => {
+      selectedRate = 101;
+      document.getElementById('cdm-withdraw').checked = true;
+      document.getElementById('cdmOption').classList.add('selected');
+      document.getElementById('upiOption').classList.remove('selected');
+      document.getElementById('currentRate').innerHTML = `1 USDT = <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"
+          class="bi bi-currency-rupee" viewBox="0 0 16 16">
+          <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z" />
+      </svg> 101`;
+      updateCalculations();
+    });
+
+    document.getElementById('upiOption').addEventListener('click', () => {
+      selectedRate = 104;
+      document.getElementById('upi-withdraw').checked = true;
+      document.getElementById('upiOption').classList.add('selected');
+      document.getElementById('cdmOption').classList.remove('selected');
+      document.getElementById('currentRate').innerHTML = `1 USDT = <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"
+          class="bi bi-currency-rupee" viewBox="0 0 16 16">
+          <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z" />
+      </svg> 104`;
+      updateCalculations();
+    });
+
+    document.getElementById('amountEnter').addEventListener('keyup', updateCalculations);
+
+    document.getElementById('confim').addEventListener('click', function(event) {
+      event.preventDefault(); 
+
+      const amount = parseFloat(document.getElementById('amountEnter').value);
+      const usdtWarning = document.getElementById('usdtWarning');
+      const amountWarning = document.getElementById('amountWarning');
+      const accountWarning = document.getElementById('accountWarning');
+      const amountInput = document.getElementById('amountEnter');
+      const inputContainer = amountInput.closest('.inputsectionnet');
+
+      usdtWarning.style.display = 'none';
+      amountWarning.style.display = 'none';
+      accountWarning.style.display = 'none';
+      inputContainer.classList.remove('shake');
+
+      if (!selectedAccountId) {
+        accountWarning.style.display = 'block';
+        return;
+      }
+
+      if (isNaN(amount) || amount < minAmount) {
+        usdtWarning.style.display = 'block';
+        inputContainer.classList.add('shake');
+        return;
+      }
+
+      if (amount > totalAmount) {
+        amountWarning.style.display = 'block';
+        inputContainer.classList.add('shake');
+        return;
+      }
+
+      window.location.href = `/store/sell/${amount}/${selectedAccountId}`;
+    });
+
+    // NEW: Wait for authentication before running code
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        loadPayeeDetails(user.uid);
+        document.getElementById('cdmOption').classList.add('selected');
+        updateCalculations();
+        $('.Available').text(`Available : ${totalAmount} `);
+      } else {
+        // Handle not logged in state
+        const payeeContainer = document.getElementById('payeeDetailsContainer');
+        const addPayeePrompt = document.getElementById('addPayeePrompt');
+        payeeContainer.style.display = 'none';
+        addPayeePrompt.style.display = 'block';
+        document.getElementById('addPayeePrompt').innerHTML = `<p>Please log in to add bank details.</p>`;
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statement</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7fafc; /* A light gray background */
+        }
+        /* Custom styles for the dropdown */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            top: 100%;
+            left: 0;
+            margin-top: 0.5rem;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            cursor: pointer;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown-content.show {
+            display: block;
+        }
+
+        /* Calendar styles */
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 4px;
+        }
+        .calendar-day {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .calendar-day:hover {
+            background-color: #e2e8f0;
+        }
+        .calendar-day.selected {
+            background-color: #12BF54;
+            color: white;
+            font-weight: 600;
+        }
+        .calendar-day.inactive {
+            color: #a0aec0;
+            cursor: not-allowed;
+        }
+        
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen">
+
+    <!-- Top Navigation Bar -->
+    <!-- The header background color has been updated to the requested green. -->
+    <header class="bg-[#12BF54] shadow-sm sticky top-0 z-10">
+        <div class="max-w-md mx-auto flex justify-between items-center text-lg p-4">
+            <!-- Back Button -->
+            <a href="mine.html" class="p-2 -ml-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 text-white">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                </svg>
+            </a>
+            <h1 class="flex-grow text-center font-semibold text-xl text-white">Statement</h1>
+            <!-- Spacer to keep title centered -->
+            <div class="w-6 h-6 p-2 -mr-2"></div>
+        </div>
+    </header>
+
+    <!-- Filters and Search -->
+    <div class="max-w-md mx-auto p-4 flex flex-col space-y-4">
+        <!-- Filter and Search Row -->
+        <div class="flex items-center space-x-2">
+            <!-- Rupee Symbol and All Dropdown -->
+            <div class="flex items-center bg-white border border-gray-300 rounded-lg shadow-sm w-1/2">
+                <span class="p-3 text-gray-600 font-semibold">&#8377;</span>
+                <div class="relative dropdown w-full">
+                    <button id="allFilter" class="w-full text-left p-3 pr-8 font-medium focus:outline-none" onclick="toggleDropdown()">
+                        All
+                        <svg class="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id="allDropdown" class="dropdown-content">
+                        <a href="#" onclick="selectOption(event, 'All')">All</a>
+                        <a href="#" onclick="selectOption(event, 'Withdraw')">Withdraw</a>
+                        <a href="#" onclick="selectOption(event, 'Deposit')">Deposit</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Search Button -->
+            <button class="bg-[#12BF54] text-white p-3 rounded-lg shadow-lg hover:opacity-90 transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Date Range Filter -->
+        <div class="flex items-center space-x-2">
+            <!-- Start Date -->
+            <div class="flex-1">
+                <label for="startDate" class="block text-xs font-medium text-gray-500 mb-1">Start</label>
+                <div class="relative">
+                    <input type="text" id="startDate" class="w-full p-3 pl-4 pr-10 text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500" readonly onclick="showCalendar('startDate')">
+                    <svg onclick="showCalendar('startDate')" class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                </div>
+            </div>
+
+            <span class="text-gray-400 font-bold">-</span>
+
+            <!-- End Date -->
+            <div class="flex-1">
+                <label for="endDate" class="block text-xs font-medium text-gray-500 mb-1">End</label>
+                <div class="relative">
+                    <input type="text" id="endDate" class="w-full p-3 pl-4 pr-10 text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500" readonly onclick="showCalendar('endDate')">
+                    <svg onclick="showCalendar('endDate')" class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main content area for the "Empty" image -->
+    <main class="flex-grow flex items-center justify-center p-4">
+        <div class="text-center text-gray-400">
+            <!-- 
+                This is the space for your image.
+                Replace this placeholder with your image tag.
+                Example: <img src="your-empty-state-image.png" alt="No data" class="w-48 mx-auto mb-4">
+            -->
+            <img src="/images/empty.png" alt="Empty state" class="w-48 mx-auto mb-4">
+            <p>Empty</p>
+        </div>
+    </main>
+
+    <!-- Calendar Modal -->
+    <div id="calendarModal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center p-4 z-50">
+        <div class="bg-white p-4 rounded-lg shadow-lg max-w-xs w-full">
+            <div class="flex justify-between items-center mb-4">
+                <button onclick="prevMonth()" class="text-gray-500 hover:text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <h3 id="currentMonthYear" class="text-xl font-semibold"></h3>
+                <button onclick="nextMonth()" class="text-gray-500 hover:text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+            <div class="grid grid-cols-7 gap-1 text-center font-medium text-sm text-gray-500 mb-2">
+                <span>Su</span>
+                <span>Mo</span>
+                <span>Tu</span>
+                <span>We</span>
+                <span>Th</span>
+                <span>Fr</span>
+                <span>Sa</span>
+            </div>
+            <div id="calendar-days" class="calendar-grid"></div>
+            <button onclick="closeCalendar()" class="mt-4 w-full bg-[#12BF54] text-white py-2 rounded-lg font-semibold hover:opacity-90 transition-colors">Close</button>
+        </div>
+    </div>
+
+    <!-- JavaScript for functionality -->
+    <script>
+        // Global variables for the calendar
+        let activeDateInput = null;
+        let currentDate = new Date();
+        const daysContainer = document.getElementById('calendar-days');
+        const monthYearDisplay = document.getElementById('currentMonthYear');
+        const dropdownContent = document.getElementById('allDropdown');
+
+        // Function to toggle the dropdown for 'All', 'Withdraw', 'Deposit'
+        function toggleDropdown() {
+            dropdownContent.classList.toggle('show');
+        }
+
+        function selectOption(event, option) {
+            event.preventDefault();
+            document.getElementById('allFilter').textContent = option;
+            dropdownContent.classList.remove('show');
+        }
+
+        // --- Calendar Functions ---
+        // Renders the calendar for the current month
+        function renderCalendar() {
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth();
+
+            const firstDay = new Date(year, month, 1);
+            const lastDay = new Date(year, month + 1, 0);
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            monthYearDisplay.textContent = `${firstDay.toLocaleString('en-US', { month: 'long' })} ${year}`;
+            daysContainer.innerHTML = '';
+
+            // Add empty cells for the days before the first of the month
+            const startDayIndex = firstDay.getDay(); // 0 = Sunday, 1 = Monday, etc.
+            for (let i = 0; i < startDayIndex; i++) {
+                const emptyCell = document.createElement('div');
+                daysContainer.appendChild(emptyCell);
+            }
+
+            // Add day cells for the entire month
+            for (let i = 1; i <= lastDay.getDate(); i++) {
+                const dayCell = document.createElement('div');
+                dayCell.textContent = i;
+                dayCell.classList.add('calendar-day');
+
+                const date = new Date(year, month, i);
+
+                // Add a selected class if the day matches the input field's date
+                const inputDateValue = document.getElementById(activeDateInput).value;
+                if (inputDateValue) {
+                    const inputDate = new Date(inputDateValue);
+                    if (date.getFullYear() === inputDate.getFullYear() &&
+                        date.getMonth() === inputDate.getMonth() &&
+                        date.getDate() === inputDate.getDate()) {
+                        dayCell.classList.add('selected');
+                    }
+                }
+
+                dayCell.onclick = () => {
+                    selectDate(date);
+                };
+                daysContainer.appendChild(dayCell);
+            }
+        }
+
+        // Moves the calendar to the previous month
+        function prevMonth() {
+            currentDate.setMonth(currentDate.getMonth() - 1);
+            renderCalendar();
+        }
+
+        // Moves the calendar to the next month
+        function nextMonth() {
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            renderCalendar();
+        }
+
+        // Handles selecting a date from the calendar
+        function selectDate(date) {
+            if (activeDateInput) {
+                const options = { month: 'short', day: 'numeric', year: 'numeric' };
+                const formattedDate = date.toLocaleDateString('en-US', options).replace(',', '');
+                document.getElementById(activeDateInput).value = formattedDate;
+                closeCalendar();
+            }
+        }
+
+        // Shows the calendar modal and renders it
+        function showCalendar(inputId) {
+            activeDateInput = inputId;
+            document.getElementById('calendarModal').classList.remove('hidden');
+            renderCalendar();
+        }
+
+        // Closes the calendar modal
+        function closeCalendar() {
+            document.getElementById('calendarModal').classList.add('hidden');
+            activeDateInput = null;
+        }
+
+        // Simple function to pre-fill the date inputs and close dropdown
+        window.onload = function() {
+            const today = new Date();
+            const lastWeek = new Date(today);
+            lastWeek.setDate(today.getDate() - 7);
+            
+            const formatDate = (date) => {
+                const options = { month: 'short', day: 'numeric', year: 'numeric' };
+                return date.toLocaleDateString('en-US', options).replace(',', '');
+            };
+
+            document.getElementById('startDate').value = formatDate(lastWeek);
+            document.getElementById('endDate').value = formatDate(today);
+        };
+    </script>
+</body>
+</html>
